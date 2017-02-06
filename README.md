@@ -1,0 +1,2 @@
+# kunigamaeno.github.io
+gitpage
