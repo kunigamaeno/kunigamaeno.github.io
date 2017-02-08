@@ -7,7 +7,7 @@ var e=document.getElementById('a');
 e.addEventListener('click',()=>{
  if( window.history && window.history.pushState ){
    console.log('hit');
-   var title="aaa"+count,url=orgurl+"&ucode=hohohoho"
+   var title="aaa"+count,url=orgurl+"?&ucode=hohohoho"
     window.history.pushState(null,title,url);
     //but pushState title change not support
     document.title = title;//head write NOT;
