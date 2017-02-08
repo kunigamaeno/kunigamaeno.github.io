@@ -1,19 +1,26 @@
-
-<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<body>
 <script>
+ var count=0,orgurl;
  window.addEventListener('load',()=>{
- var e=document.getElementById('a');
+  orgurl=location.href;
+var e=document.getElementById('a');
 e.addEventListener('click',()=>{
  if( window.history && window.history.pushState ){
    console.log('hit');
-   var title="aaa",url="&ucode=hohohoho"
+   var title="aaa"+count,url=orgurl+"&ucode=hohohoho"
     window.history.pushState(null,title,url);
-  console.log(location)
-}
-})
+    //but pushState title change not support
+    document.title = title;//head write NOT;
   
-});  
-</script>
+  console.log(location,title);
+  count++;
+}
+}) 
+  
+  })
+ </script>
+
+<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 <div class="container"><div class="row"><div class="col-md-6">
 <a class="twitter-timeline"  href="https://twitter.com/hashtag/bluefuture" data-widget-id="829116503916109824">#bluefuture のツイート</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -26,3 +33,5 @@ e.addEventListener('click',()=>{
  
  
  </div></div></div>
+ 
+ </body> 
